@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>dev_kains</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/socialo-fonts.css">
+<link rel="stylesheet" href="css/component.css">
+<script src="js/modernizr.custom.js"></script>
+</head>
+
+<body>
+<header class="navbar navbar-default topNav" id="top" role="banner">
+	<div class="container">
+    <div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<a href="index.html" class="navbar-brand"><img src="images/triden1.png" alt="logo"><span>Roberts Kains</span></a> </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+		<ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">about</a></li>
+        <li><a id="drop1" href="#" role="button" class="dropdown-toggle"  href="project.html">Projects</a>
+		<ul class="dropdown-menu" >
+<!--addprojects--><li><a href="gallery.html">Gallery</a></li>
+<li><a href="tictactoe.html">TicTacToe</a></li>
+		</ul>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    </nav> 
+</div>
+</header>
+<section class="container menuBottomCon"> 
+  <div class="row">
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 topContent">
+      <h3 class="font-openBold">I am a passionate full-stack programmer, industrious and ambitious, looking to leverage my skillset.</h3>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 socialList">
+      <ul class="list-unstyled">
+        <li><a href="https://www.facebook.com/roberts.kains.54" class="facebookcircle icon"></a></li>
+        <li><a href="#" class="twitterbirdcircle icon"></a></li>
+        <li><a href="#" class="linkedincircle icon"></a></li>
+        <li><a href="https://www.google.com" class="googlecircle icon"></a></li>
+      </ul>
+    </div>
+</section>
+<div class="separator container"><span class="sepIcon intop"></span></div>
+<div class="container bodyContent">
+  <div class="row content"> 
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 cl"> <img src="http://placehold.it/300x360" class="img-responsive" alt=""> </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 cr"> 
+      <div class="cb clearfix">
+        <h3>About me</h3>
+        <img src="images/my_picture.jpg" width="250" height="241" alt="my_picture" class="picRight"/>
+        <p>Curabitur tincidunt est sit amet nibh imperdiet dapibus. Praesent tristique diam eros, sit amet rhoncus sapien pharetra cursus. Etiam vitae commodo massa. Suspendisse hendrerit placerat ante in faucibus. Nulla nisi metus, semper laoreet posuere eget, iaculis ut urna. Praesent volutpat arcu et justo adipiscing lacinia</p>
+        <p>Sed sit amet iaculis lectus. Nulla sed felis nec neque porta tempus quis vitae metus. Cras sem nulla, porta nec quam ac, volutpat venenatis lectus. Curabitur non suscipit mi, viverra malesuada metus. Etiam rutrum ligula nec feugiat mattis. Nullam vitae tortor sit amet lectus lacinia placerat. Aliquam vel venenatis urna, egetIn metus quam.</p>
+        <a href="CV/CV.txt" class="dl">CV Download</a> </div>
+      <div class="cb clearfix">
+        <h3>My Skills</h3>
+        <ul>
+          <li><b>HTML/CSS</b></li>
+          <li><b>JavaScript</b></li>
+          <li><b>GitHub</b></li>
+          <li><b>PostgresSQL</b></li>
+          <li><b>REST/HTTP</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <ul class="list-unstyled footerLink">
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="index.html">ABOUT</a></li>
+      <li><a href="project.html">PROJECTS</a></li>
+    </ul>
+  </div>
+</footer>
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script src="js/masonry.pkgd.min.js"></script> 
+<script src="js/imagesloaded.pkgd.min.js"></script> 
+<script src="js/classie.js"></script> 
+<script src="js/colorfinder-1.1.js"></script> 
+<script src="js/gridScrollFx.js"></script> 
+<script>
+var masonryClass, container = $("#grid");
+	new GridScrollFx( document.getElementById( 'grid' ), {
+		viewportFactor : 0.4
+	} );
+	
+	$(function(){
+		$(".hiddenElm li").each(function(index, element) {
+			$(this).attr({"di":index});
+			})
+		$(".vc").not(".disabled").click(function(e) {
+			e.preventDefault();
+			a = [];
+				if($(".hiddenElm li").length>0){
+					$(".hiddenElm li").each(function(index, element) {
+						if(index<=5){
+							a.push($(this).attr("di"));
+							var getElm = $(this).clone(true);							
+							$("#grid").append(getElm);
+						}else{
+							return;
+						}
+                    });
+					$.each(a,function(i){						
+						$(".hiddenElm li[di='"+a[i]+"']").remove();
+					});	
+				}else{
+					$(this).addClass("disabled").text("The End");	
+				}
+				$(".pf-slider").each(function(index, element) {
+					$(this).height($(this).parents("li").height()-116);           
+        		});
+				new GridScrollFx( document.getElementById( 'grid' ), {
+					viewportFactor : 0.4
+				} );
+			
+		});
+		$(".pf-slider").each(function(index, element) {
+			$(this).height($(this).parents("li").height()-116);
+            $(this).find("img").css({"left":"100%"});
+			$(this).find("img:first").css({"left":0}).addClass("currentSlide");
+			$(this).find(".prevLink").hide();
+        });
+		$("body").on("click",".slideLink",function(e){	
+			e.preventDefault();
+			var $this=$(this);
+			var getpar = $(this).parents(".pf-slider");
+			if($(this).hasClass("nextLink")){
+				$(this).siblings(".prevLink").show();
+				var getcur = getpar.find(".currentSlide");
+				var nexElm = getcur.next("img");
+				
+				nexElm.css({
+					"left":"100%",
+					"z-index":10
+				});
+				nexElm.animate({
+					"left":0
+					},"slow",
+				function(){
+					getcur.css({"left":"100%"}).removeClass("currentSlide");
+					nexElm.addClass("currentSlide");	
+					if(nexElm.next("img").length==0){
+						$this.hide();
+					}
+				})
+				
+			}
+			else{
+				$(this).siblings(".nextLink").show();
+				var getcur = getpar.find(".currentSlide");
+				var preElm = getcur.prev("img");
+								
+				preElm.css({
+					"left":(-1*getpar.width()),
+					"z-index":10
+				});
+				preElm.animate({
+					"left":0
+					},"slow",
+				function(){
+					getcur.css({"left":"100%"}).removeClass("currentSlide");
+					preElm.addClass("currentSlide");	
+					if(preElm.prev("img").length==0){
+						$this.hide();
+					}
+				})
+				}
+		})
+	});	
+</script> 
+<script>
+var activeImage;
+$(document).ready(function(e) {
+	var getmaxHeight = 0;
+	$(".testimonialText li").each(function(index, element) {
+        if($(this).height()>getmaxHeight){
+			getmaxHeight = $(this).height();
+			$(".footerTopContent").height(getmaxHeight);
+			}
+    });
+	
+    $(".testimonialText li").fadeTo("fast",0);
+	$(".testimonialText li:first").fadeTo("fast",1);
+	$(".imageSlide .imageBox").removeClass("activeImage");
+	$(".imageSlide .imageBox:first").addClass("activeImage");
+	$(".imageSlide .imageBox").mouseenter(function(){
+		if(!$(this).hasClass("activeImage")){
+			var gi = $(this).index();
+			$(".imageSlide .imageBox").removeClass("activeImage");
+			$(this).addClass("activeImage");
+			$(".testimonialText li").fadeTo("fast",0);
+			$(".testimonialText li:eq("+gi+")").fadeTo("fast",1);
+			}
+	})
+});
+</script>
+</body>
+</html>
